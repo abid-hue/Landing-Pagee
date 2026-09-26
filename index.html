@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Portofolio - Abid Taqiyudin</title>
+    
+    <!-- Menggunakan Font Poppins dari Google Fonts agar tampilan lebih modern dan rapi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Menghubungkan ke file CSS untuk styling/tampilan -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. BAGIAN NAVBAR (MENU NAVIGASI ATAS)
+         ========================================== -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">MyProfile</a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#data-diri">Data Diri</a>
+                <a href="#skill">Skill</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         2. BAGIAN HERO (FOTO & PERKENALAN UTAMA)
+         ========================================== -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <!-- Teks Perkenalan di Sisi Kiri -->
+            <div class="hero-text">
+                <p class="greeting">Halo, Saya</p>
+                <h1 class="name">Abid Taqiyudin</h1>
+                <h2 class="sub-title">Pelajar & Web Developer Pemula</h2>
+                <p class="description">
+                    Saya adalah seorang pelajar yang tertarik dengan dunia teknologi, komputer, dan pemrograman web. Senang mempelajari hal-hal baru untuk meningkatkan keterampilan.
+                </p>
+                <a href="#data-diri" class="btn-primary" id="btn-lihat-profil">Lihat Profil</a>
+            </div>
+
+            <!-- Foto Profil di Sisi Kanan (Menggunakan foto yang kamu berikan) -->
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="foto.jpg" alt="Foto Abid Taqiyudin" id="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. BAGIAN TENTANG SAYA
+         ========================================== -->
+    <section id="tentang" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="title-bar"></div>
+            <p class="about-text">
+                Saya merupakan siswa yang memiliki minat besar dalam bidang teknologi informasi dan komputer. Saya senang mempelajari cara kerja website, aplikasi, serta perangkat lunak pendukung lainnya. Saya juga suka mencoba hal-hal baru untuk menambah pengalaman dan kemampuan saya.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. BAGIAN DATA DIRI
+         ========================================== -->
+    <section id="data-diri" class="data-diri-section">
+        <div class="container">
+            <h2 class="section-title">Data Diri</h2>
+            <div class="title-bar"></div>
+
+            <!-- Kotak Kartu Putih Berisi Data Diri -->
+            <div class="card-data-diri">
+                <table class="table-data">
+                    <tr>
+                        <td class="label">Nama</td>
+                        <td class="separator">:</td>
+                        <td class="value"><strong>Abid Taqiyudin</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Tempat, Tanggal Lahir</td>
+                        <td class="separator">:</td>
+                        <td class="value">Indonesia, 2008 <!-- (Bisa kamu ubah jika ingin lebih spesifik) --></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Sekolah</td>
+                        <td class="separator">:</td>
+                        <td class="value">SMK Negeri <!-- (Bisa kamu ganti nama sekolahmu) --></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Jurusan</td>
+                        <td class="separator">:</td>
+                        <td class="value">Teknik Komputer dan Jaringan <!-- (Bisa kamu sesuaikan) --></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Kelas</td>
+                        <td class="separator">:</td>
+                        <td class="value">Pelajar <!-- (Bisa kamu ubah sesuai kelasmu) --></td>
+                    </tr>
+                    <tr>
+                        <td class="label">No. Telepon</td>
+                        <td class="separator">:</td>
+                        <td class="value"><a href="tel:089630037316" class="contact-link">089630037316</a></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Email</td>
+                        <td class="separator">:</td>
+                        <td class="value"><a href="mailto:abidgeade2@gmail.com" class="contact-link">abidgeade2@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Alamat</td>
+                        <td class="separator">:</td>
+                        <td class="value">[Silakan masukkan alamat Anda di sini] <!-- (Tinggal ganti teks ini dengan alamatmu) --></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Hobi</td>
+                        <td class="separator">:</td>
+                        <td class="value">Mempelajari Komputer, Olahraga, & Musik</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. BAGIAN SKILL SAYA
+         ========================================== -->
+    <section id="skill" class="skill-section">
+        <div class="container">
+            <h2 class="section-title">Skill Saya</h2>
+            <div class="title-bar"></div>
+
+            <div class="skill-grid">
+                <!-- Kartu Skill 1 -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">Aplikasi</h3>
+                    <p class="skill-card-desc">
+                        Mampu mengoperasikan aplikasi komputer dasar dan pengolah data untuk mencatat tugas, pemasukan, dan laporan sederhana.
+                    </p>
+                </div>
+
+                <!-- Kartu Skill 2 -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">HTML & CSS</h3>
+                    <p class="skill-card-desc">
+                        Bisa membuat struktur halaman website sederhana menggunakan HTML dan merapikan tampilannya dengan CSS modern.
+                    </p>
+                </div>
+
+                <!-- Kartu Skill 3 -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">Dasar Komputer</h3>
+                    <p class="skill-card-desc">
+                        Memahami dasar-dasar perangkat keras komputer, penginstalan aplikasi, dan pengelolaan sistem operasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. BAGIAN FOOTER & KONTAK
+         ========================================== -->
+    <footer id="kontak" class="footer">
+        <div class="container footer-content">
+            <h3 class="footer-title">Kontak</h3>
+            
+            <div class="footer-info">
+                <p>Email : <a href="mailto:abidgeade2@gmail.com">abidgeade2@gmail.com</a></p>
+                <p>No. Telepon / WhatsApp : <a href="https://wa.me/6289630037316" target="_blank">089630037316</a></p>
+                <p>Alamat : [Silakan masukkan alamat Anda di sini]</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Dibuat oleh Abid Taqiyudin | 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

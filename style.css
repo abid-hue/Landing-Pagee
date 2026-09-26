@@ -1,0 +1,391 @@
+/* ========================================================
+   FILE STYLING (CSS) - LANDING PAGE PORTOFOLIO ABID TAQIYUDIN
+   Dibuat rapi dan terstruktur agar mudah dipahami saat presentasi.
+   ======================================================== */
+
+/* 1. RESET DASAR & PENGATURAN UMUM */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* Wadah umum untuk membatasi lebar konten agar rapi di tengah */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   2. NAVBAR (NAVIGASI ATAS)
+   ========================================== */
+.navbar {
+    background-color: #6d28d9; /* Warna ungu utama */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a {
+    color: #f3e8ff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   3. HERO SECTION (PEMBUKA & FOTO)
+   ========================================== */
+.hero-section {
+    background-color: #f6f3ff; /* Latar belakang ungu muda lembut */
+    padding: 70px 0 80px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6d28d9; /* Warna ungu tegas untuk nama */
+    margin-bottom: 5px;
+}
+
+.sub-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 25px;
+    max-width: 480px;
+}
+
+/* Tombol "Lihat Profil" */
+.btn-primary {
+    display: inline-block;
+    background-color: #7c3aed;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #5b21b6;
+    transform: translateY(-2px);
+}
+
+/* Foto Profil & Bingkai */
+.hero-image {
+    flex-shrink: 0;
+}
+
+.image-wrapper {
+    width: 250px;
+    height: 310px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 3px solid #7c3aed; /* Garis bingkai ungu */
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); /* Efek bayangan ungu elegan */
+    background-color: #ffffff;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Memastikan kepala dan topi terlihat pas */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03); /* Sedikit zoom saat disorot mouse */
+}
+
+/* ==========================================
+   4. JUDUL TIAP SECTION & GARIS PEMANIS
+   ========================================== */
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #6d28d9;
+    margin-bottom: 5px;
+}
+
+.title-bar {
+    width: 50px;
+    height: 3px;
+    background-color: #8b5cf6;
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   5. TENTANG SAYA
+   ========================================== */
+.about-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.about-text {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    color: #4b5563;
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   6. DATA DIRI
+   ========================================== */
+.data-diri-section {
+    background-color: #f8f6ff; /* Latar ungu muda lembut */
+    padding: 60px 0;
+}
+
+.card-data-diri {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f0f7;
+}
+
+.table-data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-data td {
+    padding: 10px 6px;
+    font-size: 0.95rem;
+    vertical-align: top;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.table-data tr:last-child td {
+    border-bottom: none;
+}
+
+.table-data .label {
+    width: 32%;
+    font-weight: 600;
+    color: #374151;
+}
+
+.table-data .separator {
+    width: 3%;
+    text-align: center;
+    color: #6b7280;
+}
+
+.table-data .value {
+    width: 65%;
+    color: #4b5563;
+}
+
+.contact-link {
+    color: #6d28d9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   7. SKILL SAYA
+   ========================================== */
+.skill-section {
+    background-color: #ffffff;
+    padding: 60px 0 80px 0;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    border: 1px solid #e9d5ff; /* Garis tepi ungu sangat muda */
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12);
+}
+
+.skill-card-title {
+    color: #6d28d9;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.skill-card-desc {
+    color: #4b5563;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   8. FOOTER & KONTAK
+   ========================================== */
+.footer {
+    background-color: #6d28d9; /* Warna ungu utama footer */
+    color: #ffffff;
+    padding-top: 45px;
+}
+
+.footer-content {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.footer-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+    color: #f3e8ff;
+    margin-bottom: 8px;
+}
+
+.footer-info a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.footer-info a:hover {
+    color: #fde047; /* Sedikit sentuhan warna kuning cerah saat hover link kontak */
+}
+
+.footer-bottom {
+    background-color: #4c1d95; /* Warna ungu lebih gelap untuk bar hak cipta */
+    text-align: center;
+    padding: 16px 0;
+    font-size: 0.85rem;
+    color: #ddd6fe;
+}
+
+/* ==========================================
+   9. RESPONSIVE (TAMPILAN HP / LAYAR KECIL)
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .description {
+        margin: 0 auto 25px auto;
+    }
+
+    .image-wrapper {
+        width: 210px;
+        height: 270px;
+        margin: 0 auto;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-data .label {
+        width: 40%;
+    }
+
+    .table-data .value {
+        width: 57%;
+    }
+}
