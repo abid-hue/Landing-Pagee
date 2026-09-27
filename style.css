@@ -4,6 +4,15 @@
    ======================================================== */
 
 /* 1. RESET DASAR & PENGATURAN UMUM */
+:root {
+    --green: #15803d;
+    --green-dark: #166534;
+    --green-deep: #14532d;
+    --green-pale: #f0fdf4;
+    --green-soft: #dcfce7;
+    --gold: #d4a72c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +41,7 @@ body {
    2. NAVBAR (NAVIGASI ATAS)
    ========================================== */
 .navbar {
-    background-color: #2563eb; /* Warna biru utama */
+    background-color: var(--green-dark);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,7 +64,7 @@ body {
 }
 
 .nav-links a {
-    color: #dbeafe;
+    color: var(--green-soft);
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.95rem;
@@ -72,7 +81,7 @@ body {
    3. HERO SECTION (PEMBUKA & FOTO)
    ========================================== */
 .hero-section {
-    background-color: #eef6ff; /* Latar belakang biru muda lembut */
+    background-color: var(--green-pale);
     padding: 70px 0 80px 0;
 }
 
@@ -96,7 +105,7 @@ body {
 .name {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2563eb; /* Warna biru tegas untuk nama */
+    color: var(--green-dark);
     margin-bottom: 5px;
 }
 
@@ -117,7 +126,7 @@ body {
 /* Tombol "Lihat Profil" */
 .btn-primary {
     display: inline-block;
-    background-color: #2563eb;
+    background-color: var(--green);
     color: #ffffff;
     padding: 10px 24px;
     border-radius: 8px;
@@ -125,11 +134,11 @@ body {
     font-weight: 500;
     font-size: 0.95rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
 }
 
 .btn-primary:hover {
-    background-color: #1d4ed8;
+    background-color: var(--green-dark);
     transform: translateY(-2px);
 }
 
@@ -143,8 +152,8 @@ body {
     height: 310px;
     border-radius: 18px;
     overflow: hidden;
-    border: 3px solid #2563eb; /* Garis bingkai biru */
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); /* Efek bayangan biru elegan */
+    border: 3px solid var(--green);
+    box-shadow: 0 10px 25px rgba(21, 128, 61, 0.25);
     background-color: #ffffff;
 }
 
@@ -168,14 +177,14 @@ body {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #2563eb;
+    color: var(--green-dark);
     margin-bottom: 5px;
 }
 
 .title-bar {
     width: 50px;
     height: 3px;
-    background-color: #60a5fa;
+    background-color: var(--gold);
     margin: 0 auto 30px auto;
     border-radius: 2px;
 }
@@ -201,7 +210,7 @@ body {
    6. DATA DIRI
    ========================================== */
 .data-diri-section {
-    background-color: #f3f9ff; /* Latar biru muda lembut */
+    background-color: var(--green-pale);
     padding: 60px 0;
 }
 
@@ -212,7 +221,7 @@ body {
     margin: 0 auto;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eaf2ff;
+    border: 1px solid var(--green-soft);
 }
 
 .table-data {
@@ -249,7 +258,7 @@ body {
 }
 
 .contact-link {
-    color: #2563eb;
+    color: var(--green);
     text-decoration: none;
     font-weight: 500;
 }
@@ -275,21 +284,21 @@ body {
 
 .skill-card {
     background-color: #ffffff;
-    border: 1px solid #e9d5ff; /* Garis tepi ungu sangat muda */
+    border: 1px solid var(--green-soft);
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.04);
+    box-shadow: 0 4px 15px rgba(21, 128, 61, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(109, 40, 217, 0.12);
+    box-shadow: 0 8px 24px rgba(21, 128, 61, 0.12);
 }
 
 .skill-card-title {
-    color: #6d28d9;
+    color: var(--green-dark);
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 12px;
@@ -305,7 +314,7 @@ body {
    8. FOOTER & KONTAK
    ========================================== */
 .footer {
-    background-color: #6d28d9; /* Warna ungu utama footer */
+    background-color: var(--green-dark);
     color: #ffffff;
     padding-top: 45px;
 }
@@ -323,7 +332,7 @@ body {
 
 .footer-info p {
     font-size: 0.95rem;
-    color: #f3e8ff;
+    color: var(--green-soft);
     margin-bottom: 8px;
 }
 
@@ -334,15 +343,15 @@ body {
 }
 
 .footer-info a:hover {
-    color: #fde047; /* Sedikit sentuhan warna kuning cerah saat hover link kontak */
+    color: #facc15;
 }
 
 .footer-bottom {
-    background-color: #4c1d95; /* Warna ungu lebih gelap untuk bar hak cipta */
+    background-color: var(--green-deep);
     text-align: center;
     padding: 16px 0;
     font-size: 0.85rem;
-    color: #ddd6fe;
+    color: #bbf7d0;
 }
 
 /* ==========================================
