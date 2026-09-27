@@ -32,7 +32,7 @@ body {
    2. NAVBAR (NAVIGASI ATAS)
    ========================================== */
 .navbar {
-    background-color: #6d28d9; /* Warna ungu utama */
+    background-color: #2563eb; /* Warna biru utama */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-links a {
-    color: #f3e8ff;
+    color: #dbeafe;
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.95rem;
@@ -72,7 +72,7 @@ body {
    3. HERO SECTION (PEMBUKA & FOTO)
    ========================================== */
 .hero-section {
-    background-color: #f6f3ff; /* Latar belakang ungu muda lembut */
+    background-color: #eef6ff; /* Latar belakang biru muda lembut */
     padding: 70px 0 80px 0;
 }
 
@@ -96,7 +96,7 @@ body {
 .name {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #6d28d9; /* Warna ungu tegas untuk nama */
+    color: #2563eb; /* Warna biru tegas untuk nama */
     margin-bottom: 5px;
 }
 
@@ -117,7 +117,7 @@ body {
 /* Tombol "Lihat Profil" */
 .btn-primary {
     display: inline-block;
-    background-color: #7c3aed;
+    background-color: #2563eb;
     color: #ffffff;
     padding: 10px 24px;
     border-radius: 8px;
@@ -125,11 +125,11 @@ body {
     font-weight: 500;
     font-size: 0.95rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #5b21b6;
+    background-color: #1d4ed8;
     transform: translateY(-2px);
 }
 
@@ -143,8 +143,8 @@ body {
     height: 310px;
     border-radius: 18px;
     overflow: hidden;
-    border: 3px solid #7c3aed; /* Garis bingkai ungu */
-    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); /* Efek bayangan ungu elegan */
+    border: 3px solid #2563eb; /* Garis bingkai biru */
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); /* Efek bayangan biru elegan */
     background-color: #ffffff;
 }
 
@@ -168,14 +168,14 @@ body {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #6d28d9;
+    color: #2563eb;
     margin-bottom: 5px;
 }
 
 .title-bar {
     width: 50px;
     height: 3px;
-    background-color: #8b5cf6;
+    background-color: #60a5fa;
     margin: 0 auto 30px auto;
     border-radius: 2px;
 }
@@ -201,7 +201,7 @@ body {
    6. DATA DIRI
    ========================================== */
 .data-diri-section {
-    background-color: #f8f6ff; /* Latar ungu muda lembut */
+    background-color: #f3f9ff; /* Latar biru muda lembut */
     padding: 60px 0;
 }
 
@@ -212,7 +212,7 @@ body {
     margin: 0 auto;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f1f0f7;
+    border: 1px solid #eaf2ff;
 }
 
 .table-data {
@@ -249,7 +249,7 @@ body {
 }
 
 .contact-link {
-    color: #6d28d9;
+    color: #2563eb;
     text-decoration: none;
     font-weight: 500;
 }
