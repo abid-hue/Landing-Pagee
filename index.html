@@ -4,196 +4,943 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Portofolio - Abid Taqiyudin</title>
+    <title>abidyow — Developer Portfolio & TJKT (Abid Taqiyudin)</title>
+    <meta name="description" content="Portofolio resmi abidyow (Abid Taqiyudin), pelajar SMK Tunas Harapan Pati jurusan Teknik Komputer dan Jaringan (TJKT) & Web Developer Pemula.">
+    <meta name="keywords" content="abidyow, Abid Taqiyudin, Portofolio, Web Developer, TJKT, SMK Tunas Harapan Pati, Programmer">
+    <meta name="author" content="Abid Taqiyudin">
+    <meta name="theme-color" content="#090a0f">
 
-    <!-- Menggunakan Font Poppins dari Google Fonts agar tampilan lebih modern dan rapi -->
+    <!-- Google Fonts: Plus Jakarta Sans (Modern UI) & JetBrains Mono (Code/Terminal) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Menghubungkan ke file CSS untuk styling/tampilan -->
+    <!-- CSS Utama -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Background Canvas Efek Matrix / Particle Glowing -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Background Ambient Glow Orbs -->
+    <div class="ambient-glow glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
 
     <!-- ==========================================
-         1. BAGIAN NAVBAR (MENU NAVIGASI ATAS)
+         1. NAVBAR MODERN GLASSMORPHISM
          ========================================== -->
-    <header class="navbar">
+    <header class="navbar" id="main-navbar">
         <div class="container nav-container">
-            <a href="#home" class="logo">MyProfile</a>
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#tentang">Tentang</a>
-                <a href="#data-diri">Data Diri</a>
-                <a href="#skill">Skill</a>
-                <a href="#kontak">Kontak</a>
+            <a href="#home" class="logo" id="brand-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-name">abidyow</span>
+                <span class="logo-bracket">&gt;</span>
+            </a>
+
+            <!-- Menu Link Desktop -->
+            <nav class="nav-links" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#tentang" class="nav-link">Tentang</a>
+                <a href="#terminal-section" class="nav-link">Terminal</a>
+                <a href="#data-diri" class="nav-link">Data Diri</a>
+                <a href="#skill" class="nav-link">Skill</a>
+                <a href="#proyek" class="nav-link">Proyek</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
             </nav>
+
+            <!-- Nav Actions (Status & Quick CTA) -->
+            <div class="nav-actions">
+                <div class="status-indicator" title="Status: Aktif & Siap Kolaborasi">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Open to Learn</span>
+                </div>
+                <a href="#kontak" class="btn-nav">Hubungi</a>
+                <!-- Hamburger Button untuk Mobile -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Buka Menu Navigasi">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ==========================================
-         2. BAGIAN HERO (FOTO & PERKENALAN UTAMA)
-         ========================================== -->
-    <section id="home" class="hero-section">
-        <div class="container hero-container">
-            <!-- Teks Perkenalan di Sisi Kiri -->
-            <div class="hero-text">
-                <p class="greeting">Halo, Saya</p>
-                <h1 class="name">Abid Taqiyudin</h1>
-                <h2 class="sub-title">Pelajar & Web Developer Pemula</h2>
-                <p class="description">
-                    Saya adalah seorang pelajar yang tertarik dengan dunia teknologi, komputer, dan pemrograman web.
-                    Senang mempelajari hal-hal baru untuk meningkatkan keterampilan.
-                </p>
-                <a href="#data-diri" class="btn-primary" id="btn-lihat-profil">Lihat Profil</a>
-            </div>
+    <main>
+        <!-- ==========================================
+             2. HERO SECTION DENGAN EFEK CYBER PREMIUM
+             ========================================== -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <!-- Teks & Perkenalan -->
+                <div class="hero-text">
+                    <div class="badge-pill">
+                        <span class="badge-icon">⚡</span>
+                        <span>Junior Web Developer &amp; Siswa TJKT</span>
+                    </div>
 
-            <!-- Foto Profil di Sisi Kanan (Menggunakan foto yang kamu berikan) -->
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="foto.jpg" alt="Foto Abid Taqiyudin" id="profile-img">
+                    <p class="greeting">Halo Dunia, Saya</p>
+                    <h1 class="name">Abid Taqiyudin</h1>
+                    
+                    <div class="dynamic-role">
+                        <span class="role-prefix">&gt; </span>
+                        <span id="typing-text" class="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+
+                    <p class="description">
+                        Siswa <strong>SMK Tunas Harapan Pati</strong> yang berdedikasi tinggi dalam dunia rekayasa teknologi, infrastruktur komputer, jaringan (TJKT), dan pengembangan web modern. Dikenal juga sebagai <strong>abidyow</strong> dalam komunitas digital.
+                    </p>
+
+                    <!-- Tombol Aksi Utama -->
+                    <div class="hero-buttons">
+                        <a href="#proyek" class="btn-primary" id="btn-lihat-proyek">
+                            <span>Jelajahi Portofolio</span>
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#data-diri" class="btn-secondary" id="btn-lihat-profil">
+                            <span>Biodata Lengkap</span>
+                        </a>
+                        <button class="btn-ghost" id="btn-copy-email-hero" title="Salin Email">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span>Salin Email</span>
+                        </button>
+                    </div>
+
+                    <!-- Mini Stat / Highlights -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">SMK</span>
+                            <span class="stat-label">Tunas Harapan Pati</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">XII</span>
+                            <span class="stat-label">Teknik Jaringan (TJKT)</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Passion &amp; Dedikasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Profil dengan Bingkai Cyber Pro -->
+                <div class="hero-image-wrapper">
+                    <div class="cyber-frame-wrapper">
+                        <!-- Corner Tech Accents -->
+                        <div class="corner-bracket corner-tl"></div>
+                        <div class="corner-bracket corner-tr"></div>
+                        <div class="corner-bracket corner-bl"></div>
+                        <div class="corner-bracket corner-br"></div>
+
+                        <!-- Animated Luminous Border -->
+                        <div class="glow-border-effect"></div>
+
+                        <!-- Image Container -->
+                        <div class="image-inner">
+                            <img src="foto.jpg" alt="Foto Profil Abid Taqiyudin (abidyow)" id="profile-img" loading="eager">
+                            <!-- Overlay Scanline Grid -->
+                            <div class="scanline-overlay"></div>
+                        </div>
+
+                        <!-- Floating Badges Interaktif -->
+                        <div class="floating-badge badge-code">
+                            <span class="floating-dot green"></span>
+                            <span>⚡ Web Dev</span>
+                        </div>
+                        <div class="floating-badge badge-network">
+                            <span class="floating-dot blue"></span>
+                            <span>⚡ TJKT Spec</span>
+                        </div>
+                        <div class="floating-badge badge-status">
+                            <span class="floating-dot pulse"></span>
+                            <span>abidyow</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==========================================
-         3. BAGIAN TENTANG SAYA
-         ========================================== -->
-    <section id="tentang" class="about-section">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="title-bar"></div>
-            <p class="about-text">
-                Saya merupakan siswa yang memiliki minat besar dalam bidang teknologi informasi dan komputer. Saya
-                senang mempelajari cara kerja website, aplikasi, serta perangkat lunak pendukung lainnya. Saya juga suka
-                mencoba hal-hal baru untuk menambah pengalaman dan kemampuan saya.
-            </p>
-        </div>
-    </section>
+        <!-- ==========================================
+             3. INTERACTIVE DEVELOPER TERMINAL / CODE IDE
+             ========================================== -->
+        <section id="terminal-section" class="terminal-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">INTERACTIVE ENVIRONMENT</span>
+                    <h2 class="section-title">Developer Studio &amp; Terminal</h2>
+                    <p class="section-desc">Eksplorasi profil dan spesifikasi teknis langsung melalui interface coding interaktif.</p>
+                </div>
 
-    <!-- ==========================================
-         4. BAGIAN DATA DIRI
-         ========================================== -->
-    <section id="data-diri" class="data-diri-section">
-        <div class="container">
-            <h2 class="section-title">Data Diri</h2>
-            <div class="title-bar"></div>
+                <div class="ide-window" id="ide-window">
+                    <!-- IDE Top Bar -->
+                    <div class="ide-header">
+                        <div class="ide-controls">
+                            <span class="window-dot dot-red" title="Close"></span>
+                            <span class="window-dot dot-yellow" title="Minimize"></span>
+                            <span class="window-dot dot-green" title="Maximize"></span>
+                        </div>
+                        <!-- IDE Tabs -->
+                        <div class="ide-tabs">
+                            <button class="ide-tab active" data-tab="profile-code">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>abidyow.profile.ts</span>
+                            </button>
+                            <button class="ide-tab" data-tab="skills-json">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                <span>stack.config.json</span>
+                            </button>
+                            <button class="ide-tab" data-tab="cli-terminal">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                                <span>bash &mdash; interactive</span>
+                                <span class="tab-badge">CLI</span>
+                            </button>
+                        </div>
+                        <div class="ide-actions">
+                            <button class="ide-action-btn" id="btn-copy-code" title="Salin Kode">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                <span>Salin</span>
+                            </button>
+                        </div>
+                    </div>
 
-            <!-- Kotak Kartu Putih Berisi Data Diri -->
-            <div class="card-data-diri">
-                <table class="table-data">
-                    <tr>
-                        <td class="label">Nama</td>
-                        <td class="separator">:</td>
-                        <td class="value"><strong>Abid Taqiyudin</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Tempat, Tanggal Lahir</td>
-                        <td class="separator">:</td>
-                        <td class="value">Pati, 2009 <!-- (Bisa kamu ubah jika ingin lebih spesifik) --></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Sekolah</td>
-                        <td class="separator">:</td>
-                        <td class="value">SMK Tunas Harapan Pati <!-- (Bisa kamu ganti nama sekolahmu) --></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Jurusan</td>
-                        <td class="separator">:</td>
-                        <td class="value">Teknik Komputer dan Jaringan <!-- (Bisa kamu sesuaikan) --></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Kelas</td>
-                        <td class="separator">:</td>
-                        <td class="value">XII TJKT 1 <!-- (Bisa kamu ubah sesuai kelasmu) --></td>
-                    </tr>
-                    <tr>
-                        <td class="label">No. Telepon</td>
-                        <td class="separator">:</td>
-                        <td class="value"><a href="tel:089630037316" class="contact-link">089630037316</a></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Email</td>
-                        <td class="separator">:</td>
-                        <td class="value"><a href="mailto:abidgeade2@gmail.com"
-                                class="contact-link">abidgeade2@gmail.com</a></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Alamat</td>
-                        <td class="separator">:</td>
-                        <td class="value">perum pesona bumi mandiri 2 Rt 06 Rw
-                            03<!-- (Tinggal ganti teks ini dengan alamatmu) --></td>
-                    </tr>
-                    <tr>
-                        <td class="label">Hobi</td>
-                        <td class="separator">:</td>
-                        <td class="value">Mempelajari Komputer, Olahraga, & Mendengar kan Musik</td>
-                    </tr>
-                </table>
+                    <!-- Tab Content 1: TypeScript Profile -->
+                    <div class="ide-body tab-content active" id="tab-profile-code">
+                        <pre class="code-block"><code><span class="code-comment">// Profil Pengembang &amp; Siswa Teknik Komputer dan Jaringan</span>
+<span class="code-keyword">import</span> { <span class="code-variable">StudentDeveloper</span> } <span class="code-keyword">from</span> <span class="code-string">"@smk-tunas-harapan/pati"</span>;
+
+<span class="code-keyword">export const</span> <span class="code-variable">developer</span>: <span class="code-type">StudentDeveloper</span> = {
+  <span class="code-property">nama</span>: <span class="code-string">"Abid Taqiyudin"</span>,
+  <span class="code-property">alias</span>: <span class="code-string">"abidyow"</span>,
+  <span class="code-property">institusi</span>: <span class="code-string">"SMK Tunas Harapan Pati"</span>,
+  <span class="code-property">jurusan</span>: <span class="code-string">"Teknik Komputer dan Jaringan (XII TJKT 1)"</span>,
+  <span class="code-property">fokus</span>: [
+    <span class="code-string">"Web Development (HTML5, CSS3, JavaScript)"</span>,
+    <span class="code-string">"Hardware Komputer &amp; Perawatan Sistem"</span>,
+    <span class="code-string">"Infrastruktur Jaringan &amp; LAN"</span>,
+    <span class="code-string">"Game Edukasi Interaktif"</span>
+  ],
+  <span class="code-property">status</span>: <span class="code-string">"Ready to Learn &amp; Build Amazing Projects"</span>,
+  <span class="code-function">sayHello</span>(): <span class="code-type">string</span> {
+    <span class="code-keyword">return</span> <span class="code-string">`Halo! Selamat datang di portofolio digital abidyow.`</span>;
+  }
+};</code></pre>
+                    </div>
+
+                    <!-- Tab Content 2: JSON Stack -->
+                    <div class="ide-body tab-content" id="tab-skills-json">
+                        <pre class="code-block"><code>{
+  <span class="code-property">"developer_handle"</span>: <span class="code-string">"abidyow"</span>,
+  <span class="code-property">"stack_overview"</span>: {
+    <span class="code-property">"frontend"</span>: [<span class="code-string">"HTML5 Semantic"</span>, <span class="code-string">"CSS3 Modern (Flexbox, Grid)"</span>, <span class="code-string">"Responsive UI"</span>],
+    <span class="code-property">"networking"</span>: [<span class="code-string">"Konfigurasi LAN"</span>, <span class="code-string">"Crimping RJ-45"</span>, <span class="code-string">"Dasar Routing &amp; IP"</span>],
+    <span class="code-property">"hardware"</span>: [<span class="code-string">"Perakitan PC"</span>, <span class="code-string">"Instalasi OS Windows/Linux"</span>, <span class="code-string">"Troubleshooting"</span>],
+    <span class="code-property">"creativity"</span>: [<span class="code-string">"Game Edukasi Sederhana"</span>, <span class="code-string">"UI/UX Mindset"</span>]
+  },
+  <span class="code-property">"passion_level"</span>: <span class="code-string">"100%"</span>,
+  <span class="code-property">"ready_for_internship"</span>: <span class="code-keyword">true</span>
+}</code></pre>
+                    </div>
+
+                    <!-- Tab Content 3: Interactive CLI Terminal -->
+                    <div class="ide-body tab-content" id="tab-cli-terminal">
+                        <div class="cli-container">
+                            <div class="cli-welcome">
+                                <p class="cli-system-text">[Sistem Terminal Portofolio abidyow v2.0 - Siap Menerima Perintah]</p>
+                                <p class="cli-info-text">Ketik <span class="cmd-highlight">help</span> untuk melihat daftar perintah yang tersedia.</p>
+                            </div>
+                            <div class="cli-history" id="cli-history"></div>
+                            <div class="cli-input-line">
+                                <span class="cli-prompt">abidyow@portfolio:~$</span>
+                                <input type="text" id="cli-input" class="cli-input" placeholder="ketik perintah di sini (contoh: help, bio, skills)..." autocomplete="off" spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ==========================================
+             4. SECTION TENTANG SAYA
+             ========================================== -->
+        <section id="tentang" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">DISCOVER</span>
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="section-desc">Mengenal lebih dekat visi, minat, dan dedikasi saya dalam ranah teknologi informasi.</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Kolom Narasi -->
+                    <div class="about-narrative glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="narrative-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <h3 class="narrative-title">Antusiasme Belajar Tanpa Batas</h3>
+                        <p class="about-text">
+                            Saya merupakan siswa aktif di <strong>SMK Tunas Harapan Pati</strong> yang memiliki ketertarikan mendalam pada perkembangan teknologi komputer, arsitektur website, dan jaringan.
+                        </p>
+                        <p class="about-text">
+                            Bagi saya, pemrograman dan perakitan komputer bukan sekadar tugas kejuruan, melainkan ruang eksperimen kreatif untuk memecahkan masalah nyata. Saya gemar menguji alur logika kode, mencoba berbagai konsep antarmuka pengguna, serta menciptakan pengalaman digital yang bermanfaat.
+                        </p>
+
+                        <div class="narrative-points">
+                            <div class="point-item">
+                                <span class="point-check">✓</span>
+                                <span>Cepat beradaptasi dengan materi dan teknologi baru</span>
+                            </div>
+                            <div class="point-item">
+                                <span class="point-check">✓</span>
+                                <span>Teliti dalam memahami cara kerja sistem &amp; perangkat</span>
+                            </div>
+                            <div class="point-item">
+                                <span class="point-check">✓</span>
+                                <span>Memiliki etos kerja tinggi dan komitmen pada pembelajaran berkelanjutan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kartu Sorotan / Core Highlights -->
+                    <div class="about-highlights-grid">
+                        <div class="highlight-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <h4 class="highlight-title">Web Development</h4>
+                            <p class="highlight-desc">Mempelajari struktur semantik HTML5, arsitektur CSS3 modern, serta logika interaktivitas JavaScript untuk menghidupkan website.</p>
+                        </div>
+
+                        <div class="highlight-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path><path d="M17.44 2.75c-4.37 6-6 9.42-8 17.72"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                            </div>
+                            <h4 class="highlight-title">Jaringan &amp; TJKT</h4>
+                            <p class="highlight-desc">Mendalami fondasi jaringan komputer lokal (LAN), perakitan komponen PC, instalasi sistem operasi, dan pemeliharaan hardware.</p>
+                        </div>
+
+                        <div class="highlight-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <h4 class="highlight-title">Game Edukasi</h4>
+                            <p class="highlight-desc">Mengembangkan ide game edukasi sederhana yang mengubah pengalaman belajar menjadi interaktif dan menyenangkan.</p>
+                        </div>
+
+                        <div class="highlight-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <h4 class="highlight-title">Disiplin &amp; Dedikasi</h4>
+                            <p class="highlight-desc">Keseimbangan antara belajar di kejuruan TJKT, eksplorasi mandiri, serta menjaga kesehatan melalui olahraga dan musik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. SECTION DATA DIRI (DEVELOPER SPEC DOSSIER)
+             ========================================== -->
+        <section id="data-diri" class="data-diri-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">SPECIFICATIONS &amp; BIO</span>
+                    <h2 class="section-title">Data Diri &amp; Informasi Pribadi</h2>
+                    <p class="section-desc">Rincian identitas formal, kontak langsung, dan riwayat pendidikan yang terstruktur rapi.</p>
+                </div>
+
+                <div class="dossier-wrapper glass-card spotlight-card">
+                    <div class="card-glow"></div>
+
+                    <!-- Dossier Header Bar -->
+                    <div class="dossier-bar">
+                        <div class="dossier-meta">
+                            <span class="dossier-badge">ID: ABIDYOW-TJKT-2026</span>
+                            <span class="dossier-status">● VERIFIED PROFILE</span>
+                        </div>
+                        <div class="dossier-actions">
+                            <button class="btn-copy-all" id="btn-copy-all-info" title="Salin Ringkasan Data Diri">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                <span>Salin Ringkasan</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item Data Diri -->
+                    <div class="dossier-grid">
+                        <!-- Item 1: Nama Lengkap -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Nama Lengkap</span>
+                                <span class="item-value highlight-name">Abid Taqiyudin (abidyow)</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Tempat & Tanggal Lahir -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Tempat, Tanggal Lahir</span>
+                                <span class="item-value">Pati, 2009</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Asal Sekolah -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Sekolah</span>
+                                <span class="item-value">SMK Tunas Harapan Pati</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Jurusan -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Jurusan / Kompetensi</span>
+                                <span class="item-value">Teknik Komputer dan Jaringan (TJKT)</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 5: Kelas -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Kelas Saat Ini</span>
+                                <span class="item-value">XII TJKT 1</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 6: No. Telepon / WhatsApp -->
+                        <div class="dossier-item item-interactive">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">WhatsApp / Telepon</span>
+                                <a href="https://wa.me/6289630037316" target="_blank" rel="noopener noreferrer" class="item-link" id="phone-link">089630037316</a>
+                            </div>
+                            <button class="btn-item-copy" data-copy="089630037316" title="Salin Nomor">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+
+                        <!-- Item 7: Email -->
+                        <div class="dossier-item item-interactive">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Email Resmi</span>
+                                <a href="mailto:abidgeade2@gmail.com" class="item-link" id="email-link">abidgeade2@gmail.com</a>
+                            </div>
+                            <button class="btn-item-copy" data-copy="abidgeade2@gmail.com" title="Salin Email">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+
+                        <!-- Item 8: Alamat -->
+                        <div class="dossier-item">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Domisili / Alamat</span>
+                                <span class="item-value">Perum Pesona Bumi Mandiri 2 RT 06 RW 03, Pati</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 9: Hobi & Minat Luar Jam Belajar -->
+                        <div class="dossier-item full-width">
+                            <div class="item-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                            </div>
+                            <div class="item-content">
+                                <span class="item-label">Hobi &amp; Minat Pribadi</span>
+                                <div class="hobby-tags">
+                                    <span class="hobby-tag">💻 Riset &amp; Eksplorasi Komputer</span>
+                                    <span class="hobby-tag">⚽ Olahraga Aktif</span>
+                                    <span class="hobby-tag">🎧 Mendengarkan Musik</span>
+                                    <span class="hobby-tag">🌐 Coding Web</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             6. SECTION SKILL & SPESIFIKASI TEKNIS
+             ========================================== -->
+        <section id="skill" class="skill-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">COMPETENCIES &amp; STACK</span>
+                    <h2 class="section-title">Keahlian &amp; Kapabilitas</h2>
+                    <p class="section-desc">Kombinasi kemampuan pengembangan perangkat lunak, perakitan komputer, dan infrastruktur jaringan.</p>
+                </div>
+
+                <div class="skill-grid">
+                    <!-- Skill Card 1: HTML5 & CSS3 -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Frontend Web</span>
+                                <h3 class="skill-card-title">HTML5 &amp; CSS3 Modern</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Mampu merancang antarmuka web responsif, rapi, dan estetis menggunakan struktur semantik HTML5 serta pengaturan CSS Flexbox &amp; Grid modern.
+                        </p>
+                        <!-- Progress Bar -->
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Dasar &amp; Menengah</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">HTML5 Semantics</span>
+                            <span class="tech-tag">CSS Flex/Grid</span>
+                            <span class="tech-tag">Responsive UI</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Dasar Komputer, OS, & Perakitan -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Hardware &amp; OS</span>
+                                <h3 class="skill-card-title">Dasar Komputer &amp; Sistem</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Memahami arsitektur hardware PC, penginstalan sistem operasi (Windows/Linux), manajemen partisi, instalasi software esensial, dan perawatan performa sistem.
+                        </p>
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Terampil</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">Perakitan PC</span>
+                            <span class="tech-tag">Instalasi OS</span>
+                            <span class="tech-tag">Troubleshooting</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: Game Edukasi & Logika -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Aplikasi &amp; Kreativitas</span>
+                                <h3 class="skill-card-title">Pengembangan Game Edukasi</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Mampu merancang konsep dan logika aplikasi game interaktif berbasis edukasi, membuat sarana belajar yang interaktif dan menyenangkan untuk pengguna.
+                        </p>
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Kreatif &amp; Teruji</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">Game Logic</span>
+                            <span class="tech-tag">Interaktivitas</span>
+                            <span class="tech-tag">Edu Tech</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4: Dasar Jaringan Komputer (TJKT) -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Infrastruktur TJKT</span>
+                                <h3 class="skill-card-title">Jaringan Komputer &amp; LAN</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Pemahaman praktis dalam pengkabelan LAN (UTP crimping T568A/B), konfigurasi IP Address lokal (IPv4 Subnetting), switch, router dasar, dan pengujian koneksi jaringan.
+                        </p>
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Praktik Kejuruan</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">Crimping RJ-45</span>
+                            <span class="tech-tag">Subnetting IP</span>
+                            <span class="tech-tag">LAN Testing</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5: Logika Pemrograman & JavaScript -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Programming</span>
+                                <h3 class="skill-card-title">Dasar JavaScript &amp; DOM</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Mempelajari manipulasi DOM, event listener, validasi form, animasi interaktif, serta alur algoritma kondisional dan perulangan.
+                        </p>
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Eksplorasi Aktif</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">DOM Scripting</span>
+                            <span class="tech-tag">Event Handling</span>
+                            <span class="tech-tag">ES6 Basics</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6: Git & Problem Solving -->
+                    <div class="skill-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="skill-card-head">
+                            <div class="skill-icon-box">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
+                            </div>
+                            <div class="skill-meta">
+                                <span class="skill-category">Dev Tools &amp; Workflow</span>
+                                <h3 class="skill-card-title">Version Control &amp; GitHub</h3>
+                            </div>
+                        </div>
+                        <p class="skill-card-desc">
+                            Menggunakan Git untuk version control kode, mengelola repositori di GitHub, membuat commit yang rapi, dan mempublikasikan halaman portofolio secara daring.
+                        </p>
+                        <div class="skill-progress-wrap">
+                            <div class="skill-progress-info">
+                                <span>Tingkat Pemahaman</span>
+                                <span class="skill-pct">Praktik Mandiri</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-tag">Git Commit</span>
+                            <span class="tech-tag">GitHub Hosting</span>
+                            <span class="tech-tag">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             7. SECTION PROYEK & KARYA TERPILIH
+             ========================================== -->
+        <section id="proyek" class="project-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">SHOWCASE &amp; WORKS</span>
+                    <h2 class="section-title">Proyek &amp; Eksplorasi</h2>
+                    <p class="section-desc">Kompilasi proyek riil, eksperimen kode, dan implementasi kejuruan yang telah diselesaikan.</p>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Project 1: Game Edukasi Interaktif -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="project-visual visual-game">
+                            <div class="visual-badge">Karya Edukasi</div>
+                            <div class="visual-icon-center">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta-line">
+                                <span class="project-status-pill done">Selesai</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3 class="project-title">Aplikasi Game Edukasi Interaktif</h3>
+                            <p class="project-desc">
+                                Merancang aplikasi game edukasi ringan yang bertujuan mengasah daya ingat dan pemahaman siswa terhadap konsep sains dan teknologi secara interaktif.
+                            </p>
+                            <div class="project-tech-list">
+                                <span>Game Logic</span>
+                                <span>Interaktivitas</span>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#kontak" class="btn-project-detail">Tanya Detail Proyek &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Portofolio Web Modern -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="project-visual visual-web">
+                            <div class="visual-badge">Web Engineering</div>
+                            <div class="visual-icon-center">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta-line">
+                                <span class="project-status-pill done">Production Ready</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3 class="project-title">Modern Developer Portfolio v2.0</h3>
+                            <p class="project-desc">
+                                Landing page dengan estetika monochrome cyber-dark, efek glassmorphism, terminal interaktif, dan animasi responsif untuk portofolio digital.
+                            </p>
+                            <div class="project-tech-list">
+                                <span>HTML5</span>
+                                <span>CSS3 Modern</span>
+                                <span>Vanilla JS</span>
+                                <span>Glassmorphism</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/abid-hue" target="_blank" rel="noopener noreferrer" class="btn-project-detail">Kunjungi Repositori &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Lab Perakitan PC & Konfigurasi LAN -->
+                    <div class="project-card glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <div class="project-visual visual-network">
+                            <div class="visual-badge">TJKT Practice</div>
+                            <div class="visual-icon-center">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta-line">
+                                <span class="project-status-pill ongoing">Praktik TJKT</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3 class="project-title">Setup Lab LAN &amp; Manajemen Komputer</h3>
+                            <p class="project-desc">
+                                Praktik perakitan komponen PC lab sekolah, pengkabelan kabel UTP straight &amp; cross, serta konfigurasi alamat IP untuk komunikasi antar-klien.
+                            </p>
+                            <div class="project-tech-list">
+                                <span>UTP / RJ-45</span>
+                                <span>Subnetting</span>
+                                <span>Hardware PC</span>
+                                <span>Windows/Linux</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#data-diri" class="btn-project-detail">Lihat Profil Sekolah &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8. SECTION KONTAK & KIRIM PESAN CEPAT
+             ========================================== -->
+        <section id="kontak" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2 class="section-title">Hubungi &amp; Terhubung</h2>
+                    <p class="section-desc">Pintu komunikasi selalu terbuka untuk peluang magang, proyek kolaborasi, ataupun diskusi teknologi.</p>
+                </div>
+
+                <div class="contact-container">
+                    <!-- Sisi Kiri: Direct Communication Cards -->
+                    <div class="contact-cards-column">
+                        <!-- WhatsApp Direct -->
+                        <a href="https://wa.me/6289630037316" target="_blank" rel="noopener noreferrer" class="contact-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="contact-card-icon wa-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span class="contact-label">WhatsApp &amp; Telepon</span>
+                                <span class="contact-val">0896-3003-7316</span>
+                                <span class="contact-sub">Respon cepat via pesan pribadi</span>
+                            </div>
+                            <div class="contact-arrow">&rarr;</div>
+                        </a>
+
+                        <!-- Email Direct -->
+                        <a href="mailto:abidgeade2@gmail.com" class="contact-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="contact-card-icon mail-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span class="contact-label">Surel Resmi (Email)</span>
+                                <span class="contact-val">abidgeade2@gmail.com</span>
+                                <span class="contact-sub">Untuk pertanyaan formal &amp; akademik</span>
+                            </div>
+                            <div class="contact-arrow">&rarr;</div>
+                        </a>
+
+                        <!-- GitHub Profile -->
+                        <a href="https://github.com/abid-hue" target="_blank" rel="noopener noreferrer" class="contact-card glass-card spotlight-card">
+                            <div class="card-glow"></div>
+                            <div class="contact-card-icon git-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span class="contact-label">GitHub Repository</span>
+                                <span class="contact-val">github.com/abid-hue</span>
+                                <span class="contact-sub">Jelajahi source code &amp; commit</span>
+                            </div>
+                            <div class="contact-arrow">&rarr;</div>
+                        </a>
+                    </div>
+
+                    <!-- Sisi Kanan: Quick WhatsApp Composer Box -->
+                    <div class="contact-composer glass-card spotlight-card">
+                        <div class="card-glow"></div>
+                        <h3 class="composer-title">Kirim Pesan Singkat Langsung</h3>
+                        <p class="composer-desc">Tuliskan pesan Anda di bawah ini, lalu klik tombol untuk mengirimkan langsung via WhatsApp ke Abid.</p>
+
+                        <form id="quick-message-form" class="composer-form">
+                            <div class="form-group">
+                                <label for="sender-name">Nama Anda</label>
+                                <input type="text" id="sender-name" class="form-input" placeholder="Masukkan nama Anda..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sender-message">Pesan / Keperluan</label>
+                                <textarea id="sender-message" class="form-input form-textarea" rows="4" placeholder="Halo Abid, saya ingin bertanya tentang..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-submit-wa" id="btn-send-wa">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                <span>Buka di WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- ==========================================
-         5. BAGIAN SKILL SAYA
+         9. FOOTER DENGAN STATUS SYSTEM & KREDIT
          ========================================== -->
-    <section id="skill" class="skill-section">
-        <div class="container">
-            <h2 class="section-title">Skill Saya</h2>
-            <div class="title-bar"></div>
-
-            <div class="skill-grid">
-                <!-- Kartu Skill 1 -->
-                <div class="skill-card">
-                    <h3 class="skill-card-title">Aplikasi</h3>
-                    <p class="skill-card-desc">
-                        Saya mampu membuat aplikasi game edukasi sederhana untuk membuat teknologi tidak hanya untuk
-                        bermain saja tapi untuk belajar.
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-name">abidyow</span>
+                        <span class="logo-bracket">&gt;</span>
+                    </a>
+                    <p class="footer-tagline">
+                        Membangun fondasi teknologi dari kode hingga konfigurasi jaringan. Terus berproses menuju standar profesional.
                     </p>
                 </div>
 
-                <!-- Kartu Skill 2 -->
-                <div class="skill-card">
-                    <h3 class="skill-card-title">HTML & CSS</h3>
-                    <p class="skill-card-desc">
-                        Bisa membuat website sederhana menggunakan HTML dan CSS.
-                    </p>
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Navigasi Cepat</h4>
+                    <div class="footer-nav-list">
+                        <a href="#home">Home</a>
+                        <a href="#tentang">Tentang</a>
+                        <a href="#data-diri">Data Diri</a>
+                        <a href="#skill">Skill</a>
+                        <a href="#proyek">Proyek</a>
+                        <a href="#kontak">Kontak</a>
+                    </div>
                 </div>
 
-                <!-- Kartu Skill 3 -->
-                <div class="skill-card">
-                    <h3 class="skill-card-title">Dasar Komputer</h3>
-                    <p class="skill-card-desc">
-                        Memahami dasar-dasar perangkat keras komputer, penginstalan aplikasi, dan pengelolaan sistem
-                        operasi.
-                    </p>
+                <div class="footer-system-status">
+                    <h4 class="footer-heading">System Status</h4>
+                    <div class="system-pill">
+                        <span class="system-dot"></span>
+                        <span>All Systems Operational</span>
+                    </div>
+                    <p class="system-details">Node: SMK Tunas Harapan (TJKT)<br>Environment: Production 2026</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==========================================
-         6. BAGIAN FOOTER & KONTAK
-         ========================================== -->
-    <footer id="kontak" class="footer">
-        <div class="container footer-content">
-            <h3 class="footer-title">Kontak</h3>
-
-            <div class="footer-info">
-                <p>Email : <a href="mailto:abidgeade2@gmail.com">abidgeade2@gmail.com</a></p>
-                <p>No. Telepon / WhatsApp : <a href="https://wa.me/6289630037316" target="_blank">089630037316</a></p>
-                <p>GitHub : https://github.com/abid-hue" target="_blank">abid-hue</a> </p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Abid Taqiyudin (abidyow). Didesain dengan dedikasi tinggi &amp; cinta pada pemrograman.</p>
+                <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    <span>Ke Atas</span>
+                </button>
             </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>Dibuat oleh Abid Taqiyudin | 2026</p>
         </div>
     </footer>
 
+    <!-- Toast Floating Alert untuk Notifikasi Salin -->
+    <div id="toast-notification" class="toast" role="alert" aria-live="assertive">
+        <span class="toast-icon">✓</span>
+        <span id="toast-message">Tersalin ke clipboard!</span>
+    </div>
+
+    <!-- Script JavaScript untuk Interaktivitas & Efek Visual -->
+    <script src="script.js"></script>
 </body>
 </html>
